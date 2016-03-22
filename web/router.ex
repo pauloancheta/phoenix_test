@@ -21,7 +21,9 @@ defmodule HerokuTestApp.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", HerokuTestApp do
-  #   pipe_through :api
-  # end
+  scope "/api", HerokuTestApp.API, as: :api do
+    pipe_through :api
+    resources "/users", UserController
+  end
+
 end

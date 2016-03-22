@@ -7,7 +7,7 @@ defmodule HerokuTestApp.UserController do
 
   def index(conn, _params) do
     users = Repo.all(User)
-    render(conn, "index.html", users: users)
+    render(conn, :index, users: users)
   end
 
   def new(conn, _params) do
